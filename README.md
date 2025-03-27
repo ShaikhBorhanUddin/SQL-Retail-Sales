@@ -141,6 +141,8 @@ GROUP BY 1
 |Clothing       |309995    |698         |
 |Beauty         |286790    |611         |
 ```
+![Alt Text](https://github.com/ShaikhBorhanUddin/SQL-Retail-Sales/blob/main/1.png)
+![Alt Text](https://github.com/ShaikhBorhanUddin/SQL-Retail-Sales/blob/main/2.png)
 4. **Write a SQL query to find the average age of customers who purchased items from the 'Beauty' category.**:
 ```sql
 SELECT
@@ -492,6 +494,8 @@ ORDER BY 1
 |Electronics|Male  |343        |
 |Electronics|Female|335        |
 ```
+![Alt Text](https://github.com/ShaikhBorhanUddin/SQL-Retail-Sales/blob/main/3.png)
+
 7. **Write a SQL query to calculate the average sale for each month. Find out best selling month in each year**:
 ```sql
 SELECT 
@@ -535,6 +539,7 @@ LIMIT 5
 |2          |25295      |
 |4          |23580      |
 ```
+![Alt Text](https://github.com/ShaikhBorhanUddin/SQL-Retail-Sales/blob/main/4.png)
 9. **Write a SQL query to find the number of unique customers who purchased items from each category.**:
 ```sql
 SELECT 
@@ -550,6 +555,7 @@ GROUP BY category
 |Clothing   |149          |
 |Electronics|144          |
 ```
+![Alt Text](https://github.com/ShaikhBorhanUddin/SQL-Retail-Sales/blob/main/5.png)
 10. **Write a SQL query to create each shift and number of orders (Example Morning <12, Afternoon Between 12 & 17, Evening >17)**:
 ```sql
 WITH hourly_sale
@@ -762,6 +768,7 @@ ORDER BY total_profit DESC;
 |Electronics |244767.54999999996  |
 |Beauty      |228589.3999999999   |
 ```
+![Alt Text](https://github.com/ShaikhBorhanUddin/SQL-Retail-Sales/blob/main/7.png)
 13. **Identify top 10 Loyal Customers (Highest Repeat Buyers)**
 ```sql
 SELECT customer_id, COUNT(*) AS purchase_count
@@ -784,6 +791,7 @@ LIMIT 10;
 |54         |21            |
 |56         |21            |
 ```
+![Alt Text](https://github.com/ShaikhBorhanUddin/SQL-Retail-Sales/blob/main/8.png)
 14. **Calculate revenue contribution by each product category**
 ```sql
 SELECT category, 
@@ -800,13 +808,13 @@ ORDER BY revenue_percentage DESC;
 |Clothing      |309995            |34.13177278883102   |
 |Beauty        |286790            |31.576803232661334  |
 ```
+![Alt Text](https://github.com/ShaikhBorhanUddin/SQL-Retail-Sales/blob/main/9.png)
 ## Findings
 
 - **Customer Demographics**: The dataset includes customers from various age groups, with sales distributed across different categories such as Clothing and Beauty.
 - **High-Value Transactions**: Several transactions had a total sale amount greater than 1000, indicating premium purchases.
 - **Sales Trends**: Monthly analysis shows variations in sales, helping identify peak seasons.
 - **Customer Insights**: The analysis identifies the top-spending customers and the most popular product categories.
-![Retail Sales Chart](https://github.com/ShaikhBorhanUddin/SQL-Retail-Sales/blob/main/RM.jpg)
 
 ## Reports
 
@@ -825,7 +833,7 @@ This project serves as a comprehensive introduction to SQL for data analysts, co
 3. **Run the Queries**: Use the SQL queries provided in the `analysis_queries.sql` file to perform your analysis.
 4. **Explore and Modify**: Feel free to modify the queries to explore different aspects of the dataset or answer additional business questions.
 
-## Author - Zero Analyst
+## Author
 
 This project is part of my portfolio, showcasing the SQL skills essential for data analyst roles. If you have any questions, feedback, or would like to collaborate, feel free to get in touch!
 
