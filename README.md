@@ -76,6 +76,20 @@ SELECT *
 FROM retail_sales
 WHERE sale_date = '2022-11-05';
 ```
+```csv
+transactions_id	sale_date	sale_time	customer_id	gender	age	category	quantity	price_per_unit	cogs	total_sale
+180	05/11/2022	10:47:00	117	Male	41	Clothing	3	300	129	900
+240	05/11/2022	11:49:00	95	Female	23	Beauty	1	300	123	300
+1256	05/11/2022	09:58:00	29	Male	23	Clothing	2	500	190	1000
+1587	05/11/2022	20:06:00	140	Female	40	Beauty	4	300	105	1200
+1819	05/11/2022	20:44:00	83	Female	35	Beauty	2	50	13.5	100
+943	05/11/2022	19:29:00	90	Female	57	Clothing	4	300	318	1200
+1896	05/11/2022	20:19:00	87	Female	30	Electronics	2	25	30.75	50
+1137	05/11/2022	22:34:00	104	Male	46	Beauty	2	500	145	1000
+856	05/11/2022	17:43:00	102	Male	54	Electronics	4	30	9.3	120
+214	05/11/2022	16:31:00	53	Male	20	Beauty	2	30	8.1	60
+1265	05/11/2022	14:35:00	86	Male	55	Clothing	3	300	111	900
+![image](https://github.com/user-attachments/assets/7a15e014-31c9-4efe-a7fc-c6a73951a036)```
 
 2. **Write a SQL query to retrieve all transactions where the category is 'Clothing' and the quantity sold is more than 4 in the month of Nov-2022**:
 ```sql
