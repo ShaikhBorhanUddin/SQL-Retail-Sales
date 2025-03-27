@@ -806,6 +806,7 @@ ORDER BY revenue_percentage DESC;
 - **High-Value Transactions**: Several transactions had a total sale amount greater than 1000, indicating premium purchases.
 - **Sales Trends**: Monthly analysis shows variations in sales, helping identify peak seasons.
 - **Customer Insights**: The analysis identifies the top-spending customers and the most popular product categories.
+![Retail Sales Chart](https://github.com/ShaikhBorhanUddin/SQL-Retail-Sales/blob/main/RM.jpg)
 
 ## Reports
 
