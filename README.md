@@ -576,6 +576,192 @@ GROUP BY shift
 |Evening  |1062        |
 |Morning  |548         |
 ```
+11. **Identify customers who haven't made a purchase in the last six months.**:
+```sql
+WITH recent_purchases AS (
+    SELECT DISTINCT customer_id
+    FROM retail_sales
+    WHERE sale_date >= NOW() - INTERVAL '6 months'
+)
+SELECT c.customer_id
+FROM (SELECT DISTINCT customer_id FROM retail_sales) c
+LEFT JOIN recent_purchases rp ON c.customer_id = rp.customer_id
+WHERE rp.customer_id IS NULL;
+```
+```csv
+|customer_id|
+|-----------|
+|87         |
+|116        |
+|71         |
+|68         |
+|51         |
+|70         |
+|146        |
+|80         |
+|52         |
+|132        |
+|84         |
+|92         |
+|101        |
+|69         |
+|114        |
+|115        |
+|60         |
+|97         |
+|108        |
+|112        |
+|22         |
+|59         |
+|135        |
+|65         |
+|127        |
+|124        |
+|98         |
+|149        |
+|73         |
+|103        |
+|11         |
+|44         |
+|42         |
+|121        |
+|117        |
+|88         |
+|82         |
+|113        |
+|125        |
+|119        |
+|40         |
+|153        |
+|43         |
+|147        |
+|9          |
+|120        |
+|15         |
+|79         |
+|26         |
+|48         |
+|85         |
+|72         |
+|95         |
+|57         |
+|19         |
+|81         |
+|61         |
+|77         |
+|30         |
+|21         |
+|131        |
+|3          |
+|17         |
+|28         |
+|37         |
+|104        |
+|5          |
+|56         |
+|91         |
+|151        |
+|74         |
+|29         |
+|54         |
+|4          |
+|34         |
+|138        |
+|96         |
+|67         |
+|83         |
+|63         |
+|10         |
+|90         |
+|35         |
+|105        |
+|45         |
+|107        |
+|6          |
+|134        |
+|86         |
+|144        |
+|39         |
+|89         |
+|93         |
+|36         |
+|31         |
+|50         |
+|102        |
+|14         |
+|66         |
+|109        |
+|155        |
+|13         |
+|118        |
+|133        |
+|111        |
+|2          |
+|16         |
+|62         |
+|75         |
+|123        |
+|128        |
+|126        |
+|99         |
+|142        |
+|152        |
+|41         |
+|46         |
+|53         |
+|32         |
+|7          |
+|100        |
+|38         |
+|136        |
+|150        |
+|140        |
+|139        |
+|12         |
+|137        |
+|78         |
+|24         |
+|25         |
+|141        |
+|122        |
+|94         |
+|154        |
+|49         |
+|47         |
+|20         |
+|33         |
+|1          |
+|76         |
+|106        |
+|18         |
+|64         |
+|110        |
+|55         |
+|145        |
+|148        |
+|130        |
+|27         |
+|129        |
+|143        |
+|23         |
+|58         |
+|8          |
+```
+-- 12. Identify the highest and least profitable product
+```sql
+SELECT category, 
+       SUM(total_sale - cogs) AS total_profit
+FROM retail_sales
+GROUP BY category
+ORDER BY total_profit DESC;
+```
+```csv
+|category    |total_profit        |
+|------------|--------------------|
+|Clothing    |245945.2499999999   |
+|Electronics |244767.54999999996  |
+|Beauty      |228589.3999999999   |
+```
 ## Findings
 
 - **Customer Demographics**: The dataset includes customers from various age groups, with sales distributed across different categories such as Clothing and Beauty.
