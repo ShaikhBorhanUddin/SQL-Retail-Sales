@@ -784,6 +784,22 @@ LIMIT 10;
 |54         |21            |
 |56         |21            |
 ```
+14. **Calculate revenue contribution by each product category**
+```sql
+SELECT category, 
+       SUM(total_sale) AS category_revenue,
+       (SUM(total_sale) / (SELECT SUM(total_sale) FROM retail_sales) * 100) AS revenue_percentage
+FROM retail_sales
+GROUP BY category
+ORDER BY revenue_percentage DESC;
+```
+```csv
+|category      |category_revenue  |revenue_percentage  |
+|--------------|------------------|--------------------|
+|Electronics   |311445            |34.291423978507645  |
+|Clothing      |309995            |34.13177278883102   |
+|Beauty        |286790            |31.576803232661334  |
+```
 ## Findings
 
 - **Customer Demographics**: The dataset includes customers from various age groups, with sales distributed across different categories such as Clothing and Beauty.
