@@ -747,7 +747,7 @@ WHERE rp.customer_id IS NULL;
 |58         |
 |8          |
 ```
--- 12. Identify the highest and least profitable product
+12. **Identify the highest and least profitable product**
 ```sql
 SELECT category, 
        SUM(total_sale - cogs) AS total_profit
@@ -761,6 +761,28 @@ ORDER BY total_profit DESC;
 |Clothing    |245945.2499999999   |
 |Electronics |244767.54999999996  |
 |Beauty      |228589.3999999999   |
+```
+13. **Identify top 10 Loyal Customers (Highest Repeat Buyers)**
+```sql
+SELECT customer_id, COUNT(*) AS purchase_count
+FROM retail_sales
+GROUP BY customer_id
+ORDER BY purchase_count DESC
+LIMIT 10;
+```
+```csv
+|customer_id|purchase_count|
+|-----------|--------------|
+|1          |76            |
+|3          |76            |
+|4          |73            |
+|2          |69            |
+|5          |63            |
+|87         |25            |
+|61         |23            |
+|85         |22            |
+|54         |21            |
+|56         |21            |
 ```
 ## Findings
 
